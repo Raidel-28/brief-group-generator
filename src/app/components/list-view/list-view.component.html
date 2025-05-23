@@ -1,0 +1,14 @@
+<section class="list-view">
+    <h2>Mes listes</h2>
+
+    <div *ngIf="lists.length === 0">
+        <p>Aucune liste disponible.</p>
+    </div>
+
+    <div class="list" *ngFor="let list of lists">
+        <h3>{{ list.name }}</h3>
+        <p>{{ list.persons.length }} personne(s)</p>
+        <p>{{ list.draws.length }} tirage(s)</p>
+        <button>Voir</button>
+    </div>
+</section>
