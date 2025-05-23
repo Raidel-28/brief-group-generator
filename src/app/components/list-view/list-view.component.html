@@ -5,10 +5,12 @@
         <p>Aucune liste disponible.</p>
     </div>
 
-    <div class="list" *ngFor="let list of lists">
+    <div class="list" *ngFor="let list of lists; let listIndex = index">
         <h3>{{ list.name }}</h3>
         <p>{{ list.persons.length }} personne(s)</p>
         <p>{{ list.draws.length }} tirage(s)</p>
-        <button>Voir</button>
-    </div>
-</section>
+
+        <!-- Bouton Voir -->
+        <a [routerLink]="['/listes', list.id]">
+            <button>Voir</button>
+        </a>
